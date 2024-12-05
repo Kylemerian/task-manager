@@ -164,7 +164,8 @@ class EditTaskCommand(Command):
             task_id = input("Введите ID задачи для редактирования: ").strip()
 
             task = self.manager.get_task_by_id(task_id)
-
+            if not task:
+                raise ValueError("Задача не найдена")
             print(f"Редактирование задачи: {task.title} (ID: {task.id})")
 
             title = input(f"Новое название (текущее: {task.title}): ").strip() or task.title
