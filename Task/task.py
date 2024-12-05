@@ -1,6 +1,4 @@
 import uuid
-from datetime import datetime
-from typing import Optional
 
 class Task:
     def __init__(self, title: str, description: str, category: str, 
